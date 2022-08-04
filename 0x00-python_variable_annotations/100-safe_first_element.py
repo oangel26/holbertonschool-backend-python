@@ -7,11 +7,8 @@
 from typing import Mapping, Any, Union, TypeVar, NewType, Sequence
 
 
-NoneType = NewType('NoneType', None)
-
-
 # The types of the elements of the input are not know
-def safe_first_element(lst: Sequence[Any]) -> Union[Any, NoneType]:
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
     """
     method which runs a list
     """
