@@ -3,28 +3,20 @@
  More involved type annotations
 """
 
-from typing import Mapping, Any, Union, TypeVar, NewType
 
-
-T = TypeVar('T')
+from typing import Mapping, Any, Union, TypeVar, NewType, Sequence
 
 
 NoneType = NewType('NoneType', None)
 
 
-def safely_get_value(dct: Mapping, key: Any, default: Union[T, NoneType]) -> Union[Any, T]:
-    """
-    Method that iterates over a dict
-    """
-    if key in dct:
-        return dct[key]
+# The types of the elements of the input are not know
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, NoneType]:
+    if lst:
+        return lst[0]
     else:
-        return default
+        return None
 
 
 if __name__ == "__main__":
-    annotations = safely_get_value.__annotations__
-
-    print("Here's what the mappings should look like")
-    for k, v in annotations.items():
-        print( ("{}: {}".format(k, v)))
+    print(safe_first_element.__annotations__)
