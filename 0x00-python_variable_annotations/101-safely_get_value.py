@@ -10,11 +10,8 @@ from typing import Mapping, Any, Union, TypeVar, NewType
 T = TypeVar('T')
 
 
-NoneType = NewType('NoneType', None)
-
-
 def safely_get_value(dct: Mapping, key: Any,
-                     default: Union[T, NoneType]) -> Union[Any, T]:
+                     default: Union[T, None]) -> Union[Any, T]:
     """
     More involved type annotations
     """
