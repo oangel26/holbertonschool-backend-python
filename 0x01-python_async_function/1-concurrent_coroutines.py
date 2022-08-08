@@ -25,7 +25,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
 
     for i in range(n):
         x = await wait_random(max_delay)
-        
+
         if (len(lista) == 0):
             lista.append(x)
         elif (len(lista) == 1):
