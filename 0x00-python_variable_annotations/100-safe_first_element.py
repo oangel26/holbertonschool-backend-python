@@ -4,7 +4,7 @@
 """
 
 
-from typing import Mapping, Any, Union, TypeVar, NewType, Sequence
+from typing import Any, Union, Sequence
 
 
 # The types of the elements of the input are not know
